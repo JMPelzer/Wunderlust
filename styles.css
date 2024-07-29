@@ -1,0 +1,324 @@
+/*CSS File Wunderlust Activity 2.4-2.5 Author: Jennifer Pelzer*/
+
+/*meyer reset*/
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+    display: block;
+}
+
+body {
+    line-height: 1;
+}
+
+ol,
+ul {
+    list-style: none;
+}
+
+blockquote,
+q {
+    quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+    content: '';
+    content: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+/* Use @import to connect with font variable on https://fonts.google.com/ */
+@import url('https://fonts.googleapis.com/css2?family=Molle&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+/* ----- ROOT STYLES AND VARIABLES ----- */
+:root {
+    --yellow: #f6d64a;
+    --teal: #55bcd5;
+    --purple: #9b26b0;
+    --blue: #499bd2;
+    --DkGray: #222222;
+    --LtGray: #eaeaea;
+    --white: #ffffff;
+    --black: #000000;
+}
+
+/* ----- SKIP LINK STYLES ----- */
+/* skip link styles from: https://webaim.org/techniques/css/invisiblecontent/ */
+#skip {
+    position: absolute;
+    left: -10000px;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+}
+
+#skip:focus {
+    position: static;
+    width: auto;
+    height: auto;
+}
+
+/* ----- HIDDEN CONTENT STYLES ----- */
+.sr-only {
+    position: absolute;
+    left: -10000px;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+}
+
+/*--html background color---*/
+
+html {
+    background-color: var(--white);
+}
+
+/*--font family and size--*/
+h1,
+h2,
+h3 {
+    font-family: "Molle", cursive;
+    font-weight: 400;
+    font-style: italic;
+}
+
+h4,
+p,
+q,
+small,
+nav,
+button,
+form {
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
+
+h1 {
+    font-size: 4.17em;
+}
+
+h2 {
+    font-size: 3.75em;
+}
+
+h3 {
+    font-size: 3.58em;
+}
+
+h4 {
+    font-size: 2.5em;
+}
+
+nav,
+form,
+p,
+q,
+button {
+    font-size: 1.67em;
+}
+
+small {
+    font-size: 1.33em;
+}
+
+/* ----- BODY STYLES ----- */
+
+body {
+    box-sizing: border-box;
+    line-height: 1.45;
+    color: var(--DkGray);
+    background-color: var(--white);
+    margin: 0;
+    padding: 0;
+
+}
+
+/*-----header styles------*/
+header {
+    background-image: linear-gradient(var(--teal), var(--white));
+    display: flex;
+}
+
+#logo {}
+
+/*--nav styles---*/
+nav {}
+
+nav a {
+    text-decoration: none;
+    text-align: center;
+    padding: 1rem;
+    margin: 1rem 0;
+    font-weight: bold;
+    color: var(--DkGray);
+    background-color: var(--white);
+    border-radius: 0.25rem;
+}
+
+nav li {
+    list-style: none;
+}
+
+a {
+    display: block;
+    padding: 1rem;
+}
+
+
+
+/*---main section----*/
+main {
+    padding: 1rem;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+#img-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-content: center;
+    grid-gap: 10px;
+}
+
+#img-grid img {
+
+    ]
+
+    /* ---plan you trip section---*/
+    #plan {
+        background-color: var(--yellow);
+
+
+    }
+
+    #plan section {}
+
+    #plan img {
+        display: block;
+        width: 100%;
+        margin: 0 auto;
+        border-radius: 1em;
+    }
+
+    #about {
+        background-color: var(--blue);
+    }
+
+    footer {
+        background-color: var(--LtGray);
+    }
