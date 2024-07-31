@@ -250,13 +250,37 @@ body {
 /*-----header styles------*/
 header {
     background-image: linear-gradient(var(--teal), var(--white));
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
 }
 
-#logo {}
+#logo {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row: 1;
+}
+
+h1 {
+    grid-column-start: 1;
+    grid-column-end: -1;
+    grid-row: 2;
+    text-align: center;
+}
+
+header p {
+    grid-column-start: 1;
+    grid-column-end: -1;
+    grid-row: 3;
+    text-align: center;
+    padding-bottom: .5em;
+}
 
 /*--nav styles---*/
-nav {}
+nav {
+    grid-column-start: 2;
+    grid-column-end: -1;
+    grid-row: 1;
+}
 
 nav a {
     text-decoration: none;
@@ -286,39 +310,103 @@ main {
     margin: 0 auto;
     display: grid;
     grid-template-columns: 1fr;
+
+}
+
+/*--Majorca #into with images section--*/
+#intro>h2,
+p {
+    padding: 0 1.3em 0 1.3em;
 }
 
 #img-grid {
     display: grid;
     grid-template-columns: 1fr;
-    justify-content: center;
-    grid-gap: 10px;
 }
 
 #img-grid img {
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
 
-    ]
+/* ---plan you trip section---*/
+#plan {
+    background-color: var(--yellow);
+    display: grid;
+    grid-template-columns: 1fr;
 
-    /* ---plan you trip section---*/
-    #plan {
-        background-color: var(--yellow);
+}
 
+#plan h3 {
+    padding: .4em;
+}
 
-    }
+#plan h4 {
+    text-align: center;
+    font-weight: bold;
+}
 
-    #plan section {}
+#plan section {
+    max-width: 500px;
+    background-color: var(--teal);
+    border: 5px solid var(--white);
+    border-radius: 20px;
+    margin: 0 auto 1rem auto;
+}
 
-    #plan img {
-        display: block;
-        width: 100%;
-        margin: 0 auto;
-        border-radius: 1em;
-    }
+#plan img {
+    display: block;
+    width: 100%;
+    margin: 0 auto;
+    border-radius: 1em;
+}
 
-    #about {
-        background-color: var(--blue);
-    }
+#plan a {
+    width: fit-content;
+    margin: 0.5rem auto;
+}
 
-    footer {
-        background-color: var(--LtGray);
-    }
+/*---testimonials---*/
+#testimonials {
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+#testimonials h3 {
+    padding: .4em;
+}
+
+#testimonials section {
+    max-width: 500px;
+    margin: 0 auto 1rem auto;
+}
+
+#testimonials img {
+    display: block;
+    width: 100%;
+    margin: 0 auto;
+}
+
+#testimonials h4 {
+    text-align: center;
+    font-weight: bold;
+}
+
+#testimonials p {
+    text-align: center;
+}
+
+#testimonials q {
+    font-style: italic;
+
+}
+
+/*--about section--*/
+#about {
+    background-color: var(--blue);
+}
+
+footer {
+    background-color: var(--LtGray);
+}
