@@ -183,7 +183,6 @@ table {
 
 html {
     background-color: var(--white);
-    border: 5px solid greenyellow;
 }
 
 /*--font family and size--*/
@@ -246,7 +245,7 @@ body {
     margin: 0;
     padding: 0;
     min-width: 380px;
-    border: 10px solid red;
+
 
 }
 
@@ -254,7 +253,8 @@ body {
 header {
     background-image: linear-gradient(var(--teal), var(--white));
     display: grid;
-    grid-template-columns: 1fr 2fr;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
 }
 
 #logo {
@@ -278,14 +278,23 @@ header p {
     padding-bottom: .5em;
 }
 
-/*--nav styles---*/
+/*--- NAV Hamburger menu*/
 nav {
     grid-column-start: 2;
     grid-column-end: -1;
     grid-row: 1;
 }
 
+nav ul {
+    list-style: none;
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 0.2s ease-out;
+}
+
 nav a {
+    display: block;
+    background-color: var(--teal);
     text-decoration: none;
     text-align: center;
     padding: 1rem;
@@ -296,13 +305,18 @@ nav a {
     border-radius: 0.25rem;
 }
 
-nav li {
-    list-style: none;
+nav label {
+    grid-row: 1/2;
+    background-color: var(--yellow);
+    padding: 10px;
 }
 
-nav a {
-    display: block;
-    padding: 1rem;
+nav input {
+    visibility: hidden;
+}
+
+input:checked~ul {
+    max-height: 600px;
 }
 
 
@@ -317,10 +331,13 @@ main {
 }
 
 /*--Majorca #into with images section--*/
-article {}
 
-#intro>h2,
-p {
+
+#intro h2 {
+    padding: 0.3em;
+}
+
+#into p {
     padding: 0.3em;
 }
 
@@ -411,8 +428,6 @@ p {
 #testimonials q {
     font-style: italic;
     text-align: center;
-
-
 }
 
 /*--about section--*/
@@ -453,6 +468,7 @@ p {
 form {
     padding: 2em;
     margin: 0 auto;
+    width: 80%
 }
 
 .required {
@@ -478,7 +494,7 @@ input,
 select,
 textarea {
     padding: 20px;
-    margin-bottom: 24px;
+    margin-bottom: 20px;
     font-size: 1em;
     border: 4px solid var(--purple);
     background-color: var(--white);
@@ -489,17 +505,47 @@ legend {
 }
 
 fieldset {
-    border: 1px solid #222;
-    padding: 20px;
+    margin: 20px 0 20px 0;
     display: grid;
-    grid-template-columns: 1fr 3fr 1fr 3fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-gap: 20px;
+
 }
 
-.radio-control {}
+input[type="radio"] {
+    appearance: none;
+    background-color: var(--white);
+    margin: 0;
+    font: inherit;
+    color: currentColor;
+    width: 1.15em;
+    height: 1.15em;
+    border: 0.15em solid var(--purple);
+    border-radius: 50%;
+    transform: translateY(-0.075em);
+    display: grid;
+    place-content: center;
+}
 
-.radio-input {}
+input[type="radio"]::before {
+    content: "";
+    width: 0.90em;
+    height: 0.90em;
+    border-radius: 50%;
+    transform: scale(0);
+    transition: 120ms transform ease-in-out;
+    box-shadow: inset 1em 1em var(--purple);
+}
+
+input[type="radio"]:checked::before {
+    transform: scale(1);
+}
+
+.custom-select:focus {
+    color: var(--purple);
 
 
+}
 
 #mySubmit {
     background-color: var(--purple);
@@ -509,8 +555,6 @@ fieldset {
     font-weight: bold;
 
 }
-
-#selects {}
 
 
 
@@ -525,10 +569,14 @@ footer {
 
 }
 
+footer p {
+    font-size: 1.2em;
+}
+
 footer a {
     text-decoration: none;
     font-family: "Montserrat", sans-serif;
-    font-size: 1.5em;
+    font-size: 1.2em;
     color: var(--DkGray);
 }
 
@@ -539,18 +587,25 @@ footer a {
     }
 
     /*header*/
+    header {
+        background-image: linear-gradient(var(--teal), var(--white));
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+    }
+
     h1 {
         grid-column-start: 2;
         grid-column-end: -1;
         grid-row: 1;
-        text-align: center;
+        text-align: start;
     }
 
     header p {
         grid-column-start: 2;
         grid-column-end: -1;
         grid-row: 2;
-        text-align: center;
+        text-align: start;
         padding-bottom: .5em;
     }
 
@@ -563,6 +618,15 @@ footer a {
     nav ul {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr 1fr;
+        overflow: visible;
+    }
+
+    nav label {
+        visibility: hidden;
+    }
+
+    nav input {
+        visibility: hidden;
     }
 
     nav a {
@@ -573,7 +637,7 @@ footer a {
         color: var(--DkGray);
         text-transform: uppercase;
         font-weight: bold;
-        margin: 10px;
+        margin: 5px;
         padding: 10px;
     }
 
@@ -582,6 +646,14 @@ footer a {
     }
 
     /*images Majorca*/
+    article {
+        margin-top: 50px;
+    }
+
+    #into h2 {
+        margin-top: 30px;
+    }
+
     #img-grid {
         display: grid;
         grid-template-columns: 1fr 1fr;
@@ -589,6 +661,8 @@ footer a {
         grid-gap: 10px;
 
     }
+
+
 
     #img-grid img {
         width: 100%;
@@ -616,12 +690,13 @@ footer a {
     }
 
     /*about your destination*/
+
+
     #about div {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr 1fr;
         margin: 0 auto;
         text-align: center;
-
 
     }
 
@@ -629,6 +704,12 @@ footer a {
     #mySubmit {
         width: 50%;
         float: right;
+    }
+
+    fieldset {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 1fr;
 
     }
 
@@ -648,12 +729,64 @@ footer a {
 
     /*header*/
 
+    /*header*/
     header {
-        display: flex;
+        background-image: linear-gradient(var(--teal), var(--white));
+        display: grid;
+        grid-template-columns: 1fr 2fr 3fr;
+        grid-template-rows: 1fr 1fr;
     }
 
-    /*Majorca article and images  NEED CODE*/
+    h1 {
+        grid-column-start: 2;
+        grid-column-end: 3;
+        grid-row: 1;
+        text-align: start;
+    }
 
+    header p {
+        grid-column-start: 2;
+        grid-column-end: 3;
+        grid-row: 2;
+        text-align: start;
+        padding-bottom: .5em;
+    }
+
+    nav {
+        grid-column-start: 3;
+        grid-column-end: -1;
+        grid-row: 1;
+
+    }
+
+
+
+    /*Majorca article and images*/
+    #intro {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        padding-left: 115px;
+        padding-right: 115px;
+    }
+
+    #intro h2 {
+        grid-column-start: 1;
+        grid-column-end: 2;
+        grid-row: 1;
+        margin-bottom: 130p;
+    }
+
+    #intro p {
+        grid-column-start: 1;
+        grid-column-end: 2;
+        grid-row: 1;
+        margin-top: 150px;
+    }
+
+    #img-grid {
+        grid-column: 2/3;
+        grid-gap: 10px;
+    }
 
     /*plan*/
     #plan {
@@ -693,7 +826,36 @@ footer a {
         padding: 80px;
     }
 
-    /*form NEED CODE*/
+    /*form*/
+    form {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    input,
+    label,
+    select,
+    textarea {
+        display: block;
+        width: 80%;
+
+    }
+
+    #names {
+        grid-column-start: 1;
+        grid-column-end: 2;
+    }
+
+    #nums {
+        grid-column-start: 2;
+        grid-column-end: 3;
+    }
+
+    #selects {
+        grid-column-start: 3;
+        grid-column-end: -1;
+    }
+
 
 
     /*footer*/
